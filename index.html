@@ -67,9 +67,16 @@ nav.wrap{display:flex;align-items:center;justify-content:space-between;height:68
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--green);transition:width .3s;}
 .nav-links a:hover{color:var(--text);}
 .nav-links a:hover::after{width:100%;}
+.nav-search{display:flex;align-items:center;gap:8px;background:var(--bg-el);border:1px solid var(--border);border-radius:999px;padding:8px 16px;font-size:13px;color:var(--text3);transition:border-color .2s,box-shadow .2s;min-width:200px;cursor:pointer;}
+.nav-search:hover{border-color:var(--border-h);}
+.nav-search:focus-within{border-color:var(--green);box-shadow:0 0 0 3px rgba(192,208,0,0.1);}
+.nav-search-icon{width:16px;height:16px;flex-shrink:0;}
+.nav-search .logo-icon{width:22px;height:22px;border-radius:5px;background:var(--green);display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:10px;flex-shrink:0;}
+.nav-search input{background:transparent;border:none;outline:none;color:var(--text);font-size:13px;font-family:'Inter',sans-serif;width:100%;}
+.nav-search input::placeholder{color:var(--text3);}
 .nav-cta{font-size:13px;font-weight:600;padding:10px 20px;border-radius:999px;background:var(--purple);color:#fff;transition:all .2s;}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--purple-g);}
-@media(max-width:768px){.nav-links{display:none;}}
+@media(max-width:768px){.nav-links{display:none;}.nav-search{display:none;}}
 
 /* HERO */
 .hero{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;}
@@ -283,6 +290,11 @@ footer .fl b{color:var(--text);font-weight:600;}
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#team">Team</a>
+    </div>
+    <div class="nav-search">
+      <span class="logo-icon">S</span>
+      <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Search features...">
     </div>
     <a class="nav-cta" href="#cta">Get Early Access</a>
   </nav>
